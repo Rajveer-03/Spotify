@@ -152,7 +152,7 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of the first song
-    await getSongs("songs/DilToPagalHai");
+    await getSongs("DilToPagalHai");
     playMusic(songs[0], true);
 
     // Display all the albums on the page
