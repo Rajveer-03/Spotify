@@ -103,7 +103,7 @@ async function getSongs(album) {
 
 
 const playMusic = (track, pause = false) => {
-    const trackPath = + track;
+    const trackPath = track;
     currentSong.src = trackPath;
     console.log("Playing track:", trackPath); // Log the track path to check for errors
     if (!pause) {
