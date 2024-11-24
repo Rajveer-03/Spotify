@@ -1,6 +1,6 @@
 {
     "DiljitDosanjh": {
-        "cover": "DiljitDosanjh/cover.jpeg",
+        "cover": "songs/DiljitDosanjh/cover.jpeg",
         "songs": [
             {
                 "title": "Born To Shine - Diljit Dosanjh.mp3",
@@ -17,7 +17,7 @@
         ]
     },
     "DilwaleDulhaniaLeJayenge": {
-        "cover": "DilwaleDulhaniaLeJayenge/cover.jpeg",
+        "cover": "songs/DilwaleDulhaniaLeJayenge/cover.jpeg",
         "songs": [
             {
                 "title": "Ho Gaya Hai Tujhko Song - Lata Mangeshkar.mp3",
@@ -38,7 +38,7 @@
         ]
     },
     "DilToPagalHai": {
-        "cover": "DilToPagalHai/cover.jpeg",
+        "cover": "songs/DilToPagalHai/cover.jpeg",
         "songs": [
             {
                 "title": "Bholi Si Surat Song - Lata Mangeshkar and Udit Narayan.mp3",
@@ -55,7 +55,7 @@
         ]
     },
     "Mohabbatein": {
-        "cover": "Mohabbatein/cover.jpeg",
+        "cover": "songs/Mohabbatein/cover.jpeg",
         "songs": [
             {
                 "title": "Aankhein Khuli - Lata Mangeshkar and Udit Narayan.mp3",
