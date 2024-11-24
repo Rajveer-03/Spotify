@@ -103,7 +103,9 @@ async function getSongs(album) {
 
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = `songs/${currFolder}/` + track;
+    const trackPath = `songs/${currFolder}/` + track;
+    currentSong.src = trackPath;
+    console.log("Playing track:", trackPath); // Log the track path to check for errors
     if (!pause) {
         currentSong.play();
         play.src = "img/pause.svg";
@@ -151,9 +153,13 @@ async function displayAlbums() {
 }
 
 async function main() {
-    // Get the list of the first song
-    await getSongs("DilToPagalHai");
-    playMusic(songs[0], true);
+    // Ensure songs are fetched before accessing them
+    songs = await getSongs("DilToPagalHai");
+    if (songs.length > 0) {
+        playMusic(songs[0], true);
+    } else {
+        console.error("No songs found in the album.");
+    }
 
     // Display all the albums on the page
     await displayAlbums();
