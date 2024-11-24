@@ -1,0 +1,74 @@
+{
+    "DiljitDosanjh": {
+        "cover": "DiljitDosanjh/cover.jpeg",
+        "songs": [
+            {
+                "title": "Born To Shine - Diljit Dosanjh.mp3",
+                "path": "DiljitDosanjh/Born To Shine - Diljit Dosanjh.mp3"
+            },
+            {
+                "title": "G.O.A.T. - Diljit Dosanjh.mp3",
+                "path": "DiljitDosanjh/G.O.A.T. - Diljit Dosanjh.mp3"
+            },
+            {
+                "title": "Lalkaara - Diljit Dosanjh and Sultaan.mp3",
+                "path": "DiljitDosanjh/Lalkaara - Diljit Dosanjh and Sultaan.mp3"
+            }
+        ]
+    },
+    "DilwaleDulhaniaLeJayenge": {
+        "cover": "DilwaleDulhaniaLeJayenge/cover.jpeg",
+        "songs": [
+            {
+                "title": "Ho Gaya Hai Tujhko Song - Lata Mangeshkar.mp3",
+                "path": "DilwaleDulhaniaLeJayenge/Ho Gaya Hai Tujhko Song - Lata Mangeshkar.mp3"
+            },
+            {
+                "title": "Mehndi Laga Ke Rakhna Song - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "DilwaleDulhaniaLeJayenge/Mehndi Laga Ke Rakhna Song - Lata Mangeshkar and Udit Narayan.mp3"
+            },
+            {
+                "title": "Mere Khwabon Mein Song - Lata Mangeshkar.mp3",
+                "path": "DilwaleDulhaniaLeJayenge/Mere Khwabon Mein Song - Lata Mangeshkar.mp3"
+            },
+            {
+                "title": "Tujhe Dekha Toh Song - Lata Mangeshkar and Kumar Sanu.mp3",
+                "path": "DilwaleDulhaniaLeJayenge/Tujhe Dekha Toh Song - Lata Mangeshkar and Kumar Sanu.mp3"
+            }
+        ]
+    },
+    "DilToPagalHai": {
+        "cover": "DilToPagalHai/cover.jpeg",
+        "songs": [
+            {
+                "title": "Bholi Si Surat Song - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "DilToPagalHai/Bholi Si Surat Song - Lata Mangeshkar and Udit Narayan.mp3"
+            },
+            {
+                "title": "Dholna Song - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "DilToPagalHai/Dholna Song - Lata Mangeshkar and Udit Narayan.mp3"
+            },
+            {
+                "title": "Dil To Pagal Hai Song - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "DilToPagalHai/Dil To Pagal Hai Song - Lata Mangeshkar and Udit Narayan.mp3"
+            }
+        ]
+    },
+    "Mohabbatein": {
+        "cover": "Mohabbatein/cover.jpeg",
+        "songs": [
+            {
+                "title": "Aankhein Khuli - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "Mohabbatein/Aankhein Khuli - Lata Mangeshkar and Udit Narayan.mp3"
+            },
+            {
+                "title": "Chalte Chalte - Jatin Lalit.mp3",
+                "path": "Mohabbatein/Chalte Chalte - Jatin Lalit.mp3"
+            },
+            {
+                "title": "Humko Humise Chura Lo - Lata Mangeshkar and Udit Narayan.mp3",
+                "path": "Mohabbatein/Humko Humise Chura Lo - Lata Mangeshkar and Udit Narayan.mp3"
+            }
+        ]
+    }
+}

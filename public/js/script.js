@@ -15,30 +15,73 @@ function formatTime(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-async function getSongs(folder) {
-    currFolder = folder;
-    let a = await fetch(`/${folder}/`);
-    let response = await a.text();
-    console.log(response);
-    let div = document.createElement("div");
-    div.innerHTML = response;
-    let as = div.getElementsByTagName("a");
-    songs = [];
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-        if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split(`/${folder}/`)[1]);
-        }
+// async function getSongs(folder) {
+//     currFolder = folder;
+//     let a = await fetch(`/${folder}/`);
+//     let response = await a.text();
+//     console.log(response);
+//     let div = document.createElement("div");
+//     div.innerHTML = response;
+//     let as = div.getElementsByTagName("a");
+//     songs = [];
+//     for (let index = 0; index < as.length; index++) {
+//         const element = as[index];
+//         if (element.href.endsWith(".mp3")) {
+//             songs.push(element.href.split(`/${folder}/`)[1]);
+//         }
+//     }
+//     // Show all the songs in the playlist
+//     let songUL = document.querySelector(".songlist");
+//     songUL.innerHTML = "";
+//     for (const song of songs) {
+//         songUL.innerHTML += `
+//             <li>
+//                 <img class="invert" src="img/music.svg" alt="music-logo">
+//                 <div class="info">
+//                     <div>${song.replaceAll("%20", " ").replaceAll("%2C", " ")}</div>
+//                     <div>song artist</div>
+//                 </div>
+//                 <div class="playnow">
+//                     <span>Play now</span>
+//                     <img class="invert" src="img/play.svg" alt="play-logo">
+//                 </div>
+//             </li>`;
+//     }
+
+//     // Attach an event listener to each song
+//     Array.from(songUL.getElementsByTagName("li")).forEach(e => {
+//         e.addEventListener("click", element => {
+//             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+//         });
+//     });
+//     return songs;
+// }
+async function getSongs(album) {
+    currFolder = album;
+    
+    // Fetch the metadata JSON file
+    let response = await fetch("/songs_metadata.json");
+    let metadata = await response.json();
+    
+    // Ensure the requested album exists in the metadata
+    if (!metadata[album]) {
+        console.error(`Album "${album}" not found in metadata.`);
+        return [];
     }
-    // Show all the songs in the playlist
+
+    // Get the album data from the metadata
+    let albumData = metadata[album];
+    let songs = albumData.songs;
+
+    // Display the songs in the playlist
     let songUL = document.querySelector(".songlist");
     songUL.innerHTML = "";
     for (const song of songs) {
         songUL.innerHTML += `
             <li>
-                <img class="invert" src="img/music.svg" alt="music-logo">
+                <img class="invert" src="${albumData.cover}" alt="album-cover">
                 <div class="info">
-                    <div>${song.replaceAll("%20", " ").replaceAll("%2C", " ")}</div>
+                    <div>${song.title.replaceAll("%20", " ").replaceAll("%2C", " ")}</div>
                     <div>song artist</div>
                 </div>
                 <div class="playnow">
@@ -49,13 +92,15 @@ async function getSongs(folder) {
     }
 
     // Attach an event listener to each song
-    Array.from(songUL.getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", element => {
-            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+    Array.from(songUL.getElementsByTagName("li")).forEach((e, index) => {
+        e.addEventListener("click", () => {
+            playMusic(songs[index].path);
         });
     });
+
     return songs;
 }
+
 
 const playMusic = (track, pause = false) => {
     currentSong.src = `/${currFolder}/` + track;
