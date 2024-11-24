@@ -68,7 +68,7 @@ const playMusic = (track, pause = false) => {
 };
 
 async function displayAlbums() {
-    let a = await fetch(`/public`);
+    let a = await fetch(`/songs`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -77,10 +77,10 @@ async function displayAlbums() {
     let array = Array.from(anchors);
     for (let index = 0; index < array.length; index++) {
         const e = array[index];
-        if (e.href.includes("/public") && !e.href.includes(".htaccess")) {
+        if (e.href.includes("/songs") && !e.href.includes(".htaccess")) {
             let folder = e.href.split("/").slice(-1)[0];
             // Get the metadata of the folder
-            let a = await fetch(`/public/${folder}/info.json`);
+            let a = await fetch(`/songs/${folder}/info.json`);
             let response = await a.json();
             cardContainer.innerHTML += `
                 <div data-folder="${folder}" class="card">
@@ -90,7 +90,7 @@ async function displayAlbums() {
                             <path d="M12 10.5L12 19.5L20 15L12 10.5Z" fill="black"/>
                         </svg>
                     </div>
-                    <img src="/public/${folder}/cover.jpeg" alt="cover-img">
+                    <img src="/songs/${folder}/cover.jpeg" alt="cover-img">
                     <h3>${response.title}</h3>
                 </div>`;
         }
@@ -99,7 +99,7 @@ async function displayAlbums() {
     // Load the playlist when the card is clicked
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
-            songs = await getSongs(`public/${item.currentTarget.dataset.folder}`);
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
             playMusic(songs[0]);
         });
     });
@@ -107,7 +107,7 @@ async function displayAlbums() {
 
 async function main() {
     // Get the list of the first song
-    await getSongs("public/DilToPagalHai");
+    await getSongs("songs/DilToPagalHai");
     playMusic(songs[0], true);
 
     // Display all the albums on the page
